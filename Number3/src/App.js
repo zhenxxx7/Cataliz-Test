@@ -51,9 +51,10 @@ const UserList = ({users, remove}) => {
   return (
     <ul>
       {users.map(user => (
-        <li key={user.id}>
+        <li className='flex flex-row items-start justify-center' key={user.id}>
           {user.name} ({user.email})
-          <button onClick={() => remove(user.id)}>Delete</button>
+          <button className='ml-4 bg-red-600 hover:bg-red-800 text-white font-bold px-2 py-1 rounded'
+          onClick={() => remove(user.id)}>Delete</button>
         </li>
       ))}
     </ul>
