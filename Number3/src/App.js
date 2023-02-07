@@ -75,21 +75,22 @@ const UserForm = ({onAdd}) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
+      <input className='border-2 border-blue-500 rounded-md px-2 py-1 mr-2'
         type="text"
         name="name"
         placeholder="Name"
         value={user.name}
         onChange={handleChange}
       />
-      <input
+      <input className='border-2 border-blue-500 rounded-md px-2 py-1 mr-2'
         type="email"
         name="email"
         placeholder="Email"
         value={user.email}
         onChange={handleChange}
       />
-      <button type="submit">Add User</button>
+      <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold px-2 py-1 rounded'
+      type="submit">Add User</button>
     </form>
   );
 };
@@ -98,7 +99,7 @@ const App = () => {
   const {users, add, remove} = useUsers();
 
   return (
-    <div>
+    <div className='mt-5 flex flex-col items-center justify-center'>
       <UserForm onAdd={add} />
       <UserList users={users} remove={remove} />
     </div>
